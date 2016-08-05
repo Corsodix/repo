@@ -12,10 +12,34 @@ namespace TurtleGame
         static void Main(string[] args)
         {
             GraphicsWindow.KeyDown += GraphicsWindow_KeyDown;
-            while(true)
+            Turtle.PenUp();
+            Turtle.Speed = 4;
+
+            GraphicsWindow.BrushColor = "Red";
+            var food = Shapes.AddRectangle(10,10);
+
+            var xFood = 320;
+            var yFood = 200;
+            Shapes.Move(food, xFood, yFood);
+
+            while (true)
             {
                 Turtle.Move(10);
+
+                int x = Turtle.X;
+                int y = Turtle.Y;
+
+                Shapes.Move(food, xFood, yFood);
+
+                if (x - xFood <= 10 && y - yFood <= 10 && x - xFood >= -10 && y - yFood >= -10)
+                {
+                    xFood = xFood + 20;
+                }
             }
+            
+
+
+
         }
 
         private static void GraphicsWindow_KeyDown()
