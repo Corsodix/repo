@@ -13,7 +13,7 @@ namespace TurtleGame
         {
             GraphicsWindow.KeyDown += GraphicsWindow_KeyDown;
             Turtle.PenUp();
-            Turtle.Speed = 4;
+            //Turtle.Speed = 4;
 
             GraphicsWindow.BrushColor = "Red";
             var food = Shapes.AddRectangle(10,10);
@@ -22,18 +22,18 @@ namespace TurtleGame
             var yFood = 200;
             Shapes.Move(food, xFood, yFood);
 
+            Random rand = new Random();
+
+
             while (true)
             {
                 Turtle.Move(10);
-
-                int x = Turtle.X;
-                int y = Turtle.Y;
-
-                Shapes.Move(food, xFood, yFood);
-
-                if (x - xFood <= 10 && y - yFood <= 10 && x - xFood >= -10 && y - yFood >= -10)
+                if (Turtle.X >= xFood && Turtle.X <= xFood+10 && Turtle.Y >= yFood && Turtle.Y <= yFood+10)
                 {
-                    xFood = xFood + 20;
+                    xFood = rand.Next(0, GraphicsWindow.Width);
+                    yFood = rand.Next(0, GraphicsWindow.Height);
+                    Shapes.Move(food, xFood, yFood);
+                    Turtle.Speed++;
                 }
             }
             
