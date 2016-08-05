@@ -28,6 +28,21 @@ namespace Snake
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.DrawLine();
 
+            snake.Move();
+            System.Threading.Thread.Sleep(300);
+            snake.Move();
+            System.Threading.Thread.Sleep(300);
+            snake.Move();
+            System.Threading.Thread.Sleep(300);
+            snake.Move();
+            System.Threading.Thread.Sleep(300);
+            snake.Move();
+            System.Threading.Thread.Sleep(300);
+            snake.Move();
+            System.Threading.Thread.Sleep(300);
+            snake.Move();
+            System.Threading.Thread.Sleep(300);
+
             //Point p1 = new Point(1,3,'*');
             //p1.Draw();
 
