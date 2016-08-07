@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DecimalToBinary
 {
-    class Program
+    public class Program
     {
         public static List<int> numList = new List<int>();
 
@@ -28,6 +28,27 @@ namespace DecimalToBinary
                 Console.WriteLine("Чтобы выйти введите \"q\".");
                 exit = Console.ReadLine();
             }
+        }
+
+        public static void DecToBin()
+        {
+            int inputNumber;
+            string exit = "";
+            while (exit.ToLower() != "q") //создаем рабочий цикл
+            {
+                Console.Clear();    //очищаем экран
+                Console.WriteLine("Перевод десятичной цифры в двоичную\n");
+                Console.Write("Введите число: ");
+                if (!int.TryParse(Console.ReadLine(), out inputNumber))     //выводим сообщение и запрашиваем цифру
+                    continue;
+                var recNumber = Recursion(inputNumber);         //вызываем функцию и вводим полученное значение в переменную
+                Console.WriteLine("{0} в двоичном выражении это {1}", inputNumber, recNumber); // выводим результат на экран
+                Program.numList.Clear();        //очищаем список значений
+
+                Console.WriteLine("Чтобы выйти введите \"q\".");
+                exit = Console.ReadLine();
+            }
+
         }
         static ulong Recursion(int n)
         {

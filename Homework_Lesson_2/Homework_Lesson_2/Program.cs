@@ -24,10 +24,33 @@ namespace Homework_Lesson_2
             {
                 x = Authentication.PassCheck();
             }
+            while(true)
+            {
+                Console.WriteLine("Главное меню\n1 - для запуска конвертора десятичной в двоичный\n2 - для запуска калькулятора");
+                Console.Write("Введите число: ");
 
-            Calculator.Calc();
+                string select = Console.ReadLine();
 
-            Console.ReadKey();
+                switch(select)
+                {
+                    case "1":
+                        DecimalToBinary.Program.DecToBin();
+                        break;
+                    case "2":
+                        Calculator.Calc();
+                        break;
+                    default:
+                        continue;
+                }
+            }
+
+
+
+            //DecimalToBinary.Program.DecToBin();
+
+            //Calculator.Calc();
+
+            //Console.ReadKey();
         }
     }
 }

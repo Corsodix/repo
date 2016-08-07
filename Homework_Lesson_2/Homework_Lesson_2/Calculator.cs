@@ -24,7 +24,8 @@ namespace Homework_Lesson_2
             string exit = "a";
             while(exit.ToLower() != "q")
             {
-                int x, y, result = 0;
+                int x, y;
+                float result = 0.0f;
                 char sym;
                 Console.Clear();
                 Console.WriteLine("Калкулятор\n");
@@ -41,16 +42,16 @@ namespace Homework_Lesson_2
                 switch(sym)
                 {
                     case (char) operations.add:
-                        result = x + y;
+                        result = (float) x + y;
                         break;
                     case (char)operations.subtrack:
-                        result = x - y;
+                        result = (float) x - y;
                         break;
                     case (char)operations.divide:
-                        result = x / y;
+                        result = (float) x / y;
                         break;
                     case (char)operations.multiply:
-                        result = x * y;
+                        result = (float) x * y;
                         break;
                 }
                 Console.WriteLine("{0} {1} {2} = {3}\n", x, sym, y, result);
