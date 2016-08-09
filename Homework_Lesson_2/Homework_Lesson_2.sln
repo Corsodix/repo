@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework_Lesson_2", "Homewo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecimalToBinary", "DecimalToBinary\DecimalToBinary.csproj", "{D20C4EF7-A8AA-4B0F-9DB2-160EB5180AE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateAndTime", "DateAndTime\DateAndTime.csproj", "{2FCA28AE-A4DF-43B8-B9E4-5951430C4346}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D20C4EF7-A8AA-4B0F-9DB2-160EB5180AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D20C4EF7-A8AA-4B0F-9DB2-160EB5180AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D20C4EF7-A8AA-4B0F-9DB2-160EB5180AE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2FCA28AE-A4DF-43B8-B9E4-5951430C4346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2FCA28AE-A4DF-43B8-B9E4-5951430C4346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2FCA28AE-A4DF-43B8-B9E4-5951430C4346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2FCA28AE-A4DF-43B8-B9E4-5951430C4346}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
