@@ -53,6 +53,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DateAndTime\DateAndTime.csproj">
+      <Project>{2fca28ae-a4df-43b8-b9e4-5951430c4346}</Project>
+      <Name>DateAndTime</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DecimalToBinary\DecimalToBinary.csproj">
       <Project>{d20c4ef7-a8aa-4b0f-9db2-160eb5180ae9}</Project>
       <Name>DecimalToBinary</Name>

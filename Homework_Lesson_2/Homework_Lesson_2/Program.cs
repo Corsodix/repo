@@ -26,7 +26,7 @@ namespace Homework_Lesson_2
             }
             while(true)
             {
-                Console.WriteLine("Главное меню\n1 - для запуска конвертора десятичной в двоичный\n2 - для запуска калькулятора");
+                Console.WriteLine("Главное меню\n1 - для запуска конвертора десятичной в двоичный\n2 - для запуска калькулятора\n3 - для запуска вычисления даты DateTime\n4 - для вычисления даты с использованием новой структуры");
                 Console.Write("Введите число: ");
 
                 string select = Console.ReadLine();
@@ -39,12 +39,18 @@ namespace Homework_Lesson_2
                     case "2":
                         Calculator.Calc();
                         break;
+                    case "3":
+                        DateAndTime.Program.DateFunc();
+                        break;
+                    case "4":
+                        DateAndTime.Program.DateCalculation();
+                        break;
                     default:
                         continue;
                 }
             }
 
-
+            
 
             //DecimalToBinary.Program.DecToBin();
 

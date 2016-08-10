@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DateAndTime
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -24,7 +24,7 @@ namespace DateAndTime
             DateTime fDate = new DateTime();
             DateTime sDate = new DateTime();
             TimeSpan difDate = new TimeSpan();
-
+            Console.Clear();
             Console.Write("Введите первую дату в формате ДД.ММ.ГГГГ: ");
             dateString = Console.ReadLine();
             DateTime.TryParse(dateString, out fDate);
@@ -70,7 +70,7 @@ namespace DateAndTime
 
             Console.WriteLine("Первая дата: \t\t{0} {1} {2} год", firstDate.day, firstDate.monthName, firstDate.year);
             Console.WriteLine("Вторая дата: \t\t{0} {1} {2} год", secondDate.day, secondDate.monthName, secondDate.year);
-            Console.WriteLine("Отличия дат на: \t{0} дней, {1} месяц(ев), {2} лет", dayDif, monthDif, yearDif);
+            Console.WriteLine("Отличия дат на: \t{0} дня(ей), {1} месяц(ев), {2} лет", dayDif, monthDif, yearDif);
             Console.ReadKey();
 
         }
@@ -84,7 +84,7 @@ namespace DateAndTime
             DateStruct outputDate = new DateStruct();
             string inputDate;
             string dayStr="", monthStr = "", yearStr = "";
-            Console.Write("Введите первую дату в формате ДДММГГГГ: ");
+            Console.Write("Введите дату в формате ДДММГГГГ: ");
             inputDate = Console.ReadLine();
             for (int i = 0; i < inputDate.Length; i += 2)
             {
@@ -95,7 +95,6 @@ namespace DateAndTime
                     if (outputDate.day >= 31)
                     {
                         Console.WriteLine("Неправельный день");
-                        //outputDate.day = 31;
                     }
                 }
                 else if (i < 3)
@@ -105,7 +104,6 @@ namespace DateAndTime
                     if (outputDate.month > 13)
                     {
                         Console.WriteLine("Неправельный месяц");
-                        //outputDate.month = 12;
                     }
                 }
                 else if (i < 5)
@@ -113,7 +111,6 @@ namespace DateAndTime
                     yearStr = string.Join("", inputDate[i], inputDate[i + 1], inputDate[i + 2], inputDate[i + 3]);
                     int.TryParse(yearStr, out outputDate.year);
                 }
-                //else Console.WriteLine("Неправильный формат даты");
             }
 
 
