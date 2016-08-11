@@ -12,9 +12,9 @@ namespace DateAndTime
     {
         static void Main(string[] args)
         {
-            DateFunc();
+            //DateFunc();
 
-            DateCalculation();
+            //DateCalculation();
         }
         //F.Реализовать функции для вычисления даты используя встроенные структуры DateTime и TimeSpan.
         //    Функции: ввод даты, вычисление разницы между двумя датами, определение високосного года.
