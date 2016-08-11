@@ -10,51 +10,46 @@ namespace HomeWork_Lesson_3
     {
         static void Main(string[] args)
         {
-            Complex cn = new Complex();
-            cn.re = 4;
-            cn.im = 1;
+            Complex cNumber1 = new Complex();
+            Complex cNumber2 = new Complex();
+            Complex cNumberResult = new Complex();
+            string opName = "";
 
-            Console.WriteLine("Введите комплексное число, например 12+5i");
-            var s = "15+5i";//Console.ReadLine().Trim();
-            int a, b;
-            string aStr = "";
-            var x = s.Length;
-
-            foreach (int i in s)
+            string exit = "";
+            while (exit.ToLower() != "q")
             {
-                if (s[i] == '+')
+                Console.Clear();
+                Console.WriteLine("Введите введите первое комплексное число");
+                cNumber1 = Complex.Input();
+                Console.WriteLine("Введите введите второе комплексное число");
+                cNumber2 = Complex.Input();
+                Console.WriteLine("Выберите операцию, которую хотите с ними произвести");
+                var sel = Console.ReadLine();
+                switch(sel)
                 {
-                    int.TryParse(aStr, out a);
-                    continue;
+                    case "/":
+                        cNumberResult = Complex.Divide(cNumber1, cNumber2);
+                        opName = "деление";
+                        break;
+                    case "*":
+                        cNumberResult = Complex.Multiply(cNumber1, cNumber2);
+                        opName = "умножения";
+                        break;
+                    case "-":
+                        cNumberResult = Complex.Minus(cNumber1, cNumber2);
+                        opName = "вычитания";
+                        break;
+                    case "+":
+                        cNumberResult = Complex.Plus(cNumber1, cNumber2);
+                        opName = "сложения";
+                        break;
+                    default:
+                        continue;
                 }
-                if (s[i] == 'i')
-                {
-                    int.TryParse(aStr, out b);
-                    break;
-                }
-                aStr += s[i];
-
+                Console.WriteLine("Результат {0} {1} и {2} равен {3}\n", opName, cNumber1, cNumber2, cNumberResult);
+                Console.WriteLine("Чтобы выйти введите \"q\".");
+                exit = Console.ReadLine();
             }
-
-
-
-
-
-
-
-            Complex z;
-            //cn.Plus(cn,);
-            Console.WriteLine(cn.ToString());
-            z = Complex.Plus(cn, cn);
-            Console.WriteLine(z);
-            z = Complex.Minus(cn, cn);
-            Console.WriteLine(z);
-            z = Complex.Multi(cn, cn);
-            Console.WriteLine(z);
-            z = Complex.Divide(cn, cn);
-            Console.WriteLine(z);
-
-            Console.ReadKey();
         }
     }
 
