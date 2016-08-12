@@ -10,6 +10,12 @@ namespace HomeWork_Lesson_3
     {
         static void Main(string[] args)
         {
+            //ComplexCalc();
+            //FractionsCalc();
+
+        }
+        public static void ComplexCalc()
+        {
             Complex cNumber1 = new Complex();
             Complex cNumber2 = new Complex();
             Complex cNumberResult = new Complex();
@@ -25,7 +31,7 @@ namespace HomeWork_Lesson_3
                 cNumber2 = Complex.Input();
                 Console.WriteLine("Выберите операцию, которую хотите с ними произвести");
                 var sel = Console.ReadLine();
-                switch(sel)
+                switch (sel)
                 {
                     case "/":
                         cNumberResult = Complex.Divide(cNumber1, cNumber2);
@@ -50,6 +56,50 @@ namespace HomeWork_Lesson_3
                 Console.WriteLine("Чтобы выйти введите \"q\".");
                 exit = Console.ReadLine();
             }
+        }
+        public static void FractionsCalc()
+        {
+            Fractions q1 = new Fractions();
+            Fractions q2 = new Fractions();
+            Fractions qResult = new Fractions();
+            string opName = "";
+
+            string exit = "";
+            while (exit.ToLower() != "q")
+            {
+                Console.Clear();
+                Console.WriteLine("Введите введите первую дробь");
+                q1 = Fractions.Input();
+                Console.WriteLine("Введите введите вторйю дробь");
+                q2 = Fractions.Input();
+                Console.WriteLine("Выберите операцию, которую хотите с ними произвести");
+                var sel = Console.ReadLine();
+                switch (sel)
+                {
+                    case "/":
+                        qResult = Fractions.Divide(q1, q2);
+                        opName = "деление";
+                        break;
+                    case "*":
+                        qResult = Fractions.Multiply(q1, q2);
+                        opName = "умножения";
+                        break;
+                    case "-":
+                        qResult = Fractions.Minus(q1, q2);
+                        opName = "вычитания";
+                        break;
+                    case "+":
+                        qResult = Fractions.Plus(q1, q2);
+                        opName = "сложения";
+                        break;
+                    default:
+                        continue;
+                }
+                Console.WriteLine("Результат {0} {1} и {2} равен {3}\n", opName, q1, q2, qResult);
+                Console.WriteLine("Чтобы выйти введите \"q\".");
+                exit = Console.ReadLine();
+            }
+
         }
     }
 

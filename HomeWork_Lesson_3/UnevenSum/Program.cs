@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnevenSum
+namespace OddSum
 {
     class Program
     {
@@ -13,29 +13,9 @@ namespace UnevenSum
 //           б) Добавить обработку исключений на то, что могут быть введены не корректные данные.
 //              При возникновении ошибки вывести сообщение и продолжать работу программы.
 
-
         static void Main()
         {
-            //Console.WriteLine("Введите числа для сложения: ");
-            ////uint x, result=0;
-            ////List<uint> xList = new List<uint>();
-            //while (true)
-            //{
-            //    var str = Console.ReadLine();
-            //    if (str == "0") break;
-            //    if(!uint.TryParse(str, out x))
-            //    {
-            //        Console.WriteLine("Ошибка!");
-            //        continue;
-            //    }
-            //    else
-            //    {
-            //        if (IsOdd(x)) xList.Add(x);
-            //    }
-            //}
             xList = InputNumbers();
-
-
             Console.Write("Сумма: ");
             foreach(var i in xList)
             {
@@ -44,7 +24,6 @@ namespace UnevenSum
             }
             Console.Write(" равна: {0}",result);
             Console.ReadKey();
-            
         }
         public static uint x, result;
         public static List<uint> xList = new List<uint>();
@@ -55,10 +34,10 @@ namespace UnevenSum
         public static List<uint> InputNumbers()
         {
             Console.WriteLine("Введите числа для сложения: ");
-            while (true)
+            string str="";
+            while (str != "0")
             {
-            var str = Console.ReadLine();
-            if (str == "0") break;
+            str = Console.ReadLine();
             if (!uint.TryParse(str, out x))
                 Console.WriteLine("Ошибка!");
             else
