@@ -12,7 +12,6 @@ namespace HomeWork_Lesson_3
         {
             //ComplexCalc();
             //FractionsCalc();
-
         }
         public static void ComplexCalc()
         {
