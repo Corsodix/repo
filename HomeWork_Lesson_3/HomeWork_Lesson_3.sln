@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeWork_Lesson_3", "HomeWork_Lesson_3\HomeWork_Lesson_3.csproj", "{9EFA55F9-625E-4BBC-BB73-CB2028E77C26}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OddSum", "UnevenSum\OddSum.csproj", "{98FD0792-C1CA-4174-97FC-2F794EB3CC8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9EFA55F9-625E-4BBC-BB73-CB2028E77C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9EFA55F9-625E-4BBC-BB73-CB2028E77C26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9EFA55F9-625E-4BBC-BB73-CB2028E77C26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98FD0792-C1CA-4174-97FC-2F794EB3CC8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98FD0792-C1CA-4174-97FC-2F794EB3CC8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98FD0792-C1CA-4174-97FC-2F794EB3CC8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98FD0792-C1CA-4174-97FC-2F794EB3CC8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

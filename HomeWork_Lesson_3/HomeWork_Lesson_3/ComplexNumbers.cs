@@ -47,6 +47,7 @@ namespace HomeWork_Lesson_3
             Complex z = new Complex();
             while (true)
             {
+                Console.Clear();  
                 Console.Write("Введите число \"a\":");
                 if(!double.TryParse(Console.ReadLine(), out z.re))
                 {
