@@ -12,6 +12,7 @@ namespace HomeWork_Lesson_3
     {
         static void Main(string[] args)
         {
+            
             string x="";
             while(x!="q")
             {
@@ -35,55 +36,11 @@ namespace HomeWork_Lesson_3
                         continue;
                 }
             }
-
-
-
-
-
-            //ComplexCalc();
-            //FractionsCalc();
-            //Shape.Position coord = new Shape.Position();
-            //coord.x = 10;
-            //coord.y = 10;
-            //Circle cir = new Circle(coord, 2);
-            //coord.x = 15;
-            //coord.y = 10;
-            //Square sq = new Square(coord, 3);
-            //coord.x = 10;
-            //coord.y = 15;
-            //Triangle tri = new Triangle(coord, 7, 5, 90);
-            //IDrawable draw = new Drawable();
-
-
-
-            //draw.DrawCircle(cir);
-            //draw.DrawSquare(sq);
-            //draw.DrawTriangle(tri);
-
-            //IPrintable print = new Printable();
-
-            //print.DrawSquare(sq);
-            //print.DrawTriangle(tri);
-
-
-            //Shape.Position triangleCoord = new Shape.Position();
-            //triangleCoord.x = 10;
-            //triangleCoord.y = 10;
-            //Shape tr = new Triangle(triangleCoord,5,5,90);
-
-            //var s = tr.Area();
-
-            //Console.WriteLine(tr.ToString());
-            //Console.WriteLine(s);
-
-            Console.ReadKey();
-
         }
         public static void Shapes()
         {
             Console.Clear();
             IDrawable draw = new Drawable();
-
             Shape.Position cirCoord = new Shape.Position();
             cirCoord.x = 4;
             cirCoord.y = 4;
@@ -98,7 +55,6 @@ namespace HomeWork_Lesson_3
             Console.SetCursorPosition(1, 8);
             Console.WriteLine("2.Фигура {0}, с длинной стороны {1} и площадью {2}", sq.ToString(), sq.edgeLength, sq.Area());
             draw.DrawSquare(sq);
-
             Shape.Position triCoord = new Shape.Position();
             triCoord.x = 2;
             triCoord.y = 14;
@@ -107,7 +63,7 @@ namespace HomeWork_Lesson_3
             Console.WriteLine("3.Фигура {0}, с длинной стороны одной стороны {1}, длиной другой стороны {2}, уголом между ними {3} и площадью {4}", tri.ToString(), tri.edge1, tri.edge2, tri.angle, sq.Area());
             draw.DrawTriangle(tri);
             Console.SetCursorPosition(1, 19);
-            Console.WriteLine("Какую фигуру вы хотите распечатать?");
+            Console.Write("Введите номер фигуры, которую хотите распечатать: ");
             string str = Console.ReadLine();
             IPrintable print = new Printable();
             switch (str)
@@ -122,6 +78,8 @@ namespace HomeWork_Lesson_3
                     print.DrawTriangle(tri);
                     break;
             }
+            Console.WriteLine("Распечатаная фигура находится в фаиле testfile.txt");
+            Console.ReadLine();
         }
         public static void ComplexCalc()
         {
