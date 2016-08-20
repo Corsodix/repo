@@ -41,34 +41,32 @@ namespace HomeWork_Lesson_4
 
     //Результат работы каждой функции нужно выводить в консоли, например: Количество сотрудников в департаменте "Департамент развития бизнеса" - 10.
 
+
+        
     public class Employee
     {
-        //1. Создание собственного класса.Создайте собственный класс Employer содержащий поля зарплата, имя, должность.
-        //    Реализуйте методы "Показать данные", "Изменить должность", "Увеличить зарплату".
+        //Доп задание сделать так и не получилось
+
+        public static int id;
         public string name;
         public string surname;
         public string patornymic;
-        public string position;
         public double salary;
         public bool isFired { get { return isFired; } set { isFired = value; } }
         public string fullname { get { return $"{surname} {name} {patornymic}"; } }
+        public static int depId;
+        public string dep;
         //DepartmentId int, - значение ключа одной из записей списка департаментов(Department.Id)
-        public Employee(string name, string surname, string patornymic, string position, double salary)
+        public Employee(string name, string surname, string patornymic, double salary)
         {
             this.name = name;
             this.surname = surname;
             this.patornymic = patornymic;
-            this.position = position;
             this.salary = salary;
         }
         public override string ToString()
         {
-            return $"{surname} {name} {patornymic} должность: {position} зарплата: {salary}";
-        }
-        public void ChangePosition(ref Employee employer, string _position)
-        {
-            employer.position = _position;
-
+            return $"{surname} {name} {patornymic} зарплата: {salary}";
         }
         public void ChangeSalary(ref Employee _employer, double _salary)
         {
@@ -77,29 +75,40 @@ namespace HomeWork_Lesson_4
     }
     public class Departament
     {
-        public int id;
+        public static int id;
         public string name;
         public DateTime dateCreated; 
 
-        public Departament(int id, string name, DateTime dateCreated)
+        public Departament(string name, DateTime dateCreated)
         {
-            this.id = id;
             this.name = name;
             this.dateCreated = dateCreated;
         }
     }
     public class EmployeeList : IEnumerable
     {
-        private Employee[] eList;
-        public EmployeeList(Employee[] eArray)
-        {
-            eList = new Employee[eArray.Length];
+        public Employee[] eList;
+        private Departament[] dList;
 
-            for (int i = 0; i < eArray.Length; i++)
+        public EmployeeList(Departament[] dArray)
+        {
+            var rnd = new Random();
+            dList = new Departament[dArray.Length];
+            for (int i = 0; i < dArray.Length; i++)
             {
-                eList[i] = eArray[i];
+                dList[i] = dArray[i];
+                Departament.id++;
             }
+
+
         }
+        public void AddEmployee(Employee _employee)
+        {
+            Array.Resize<Employee>(ref eList, eList.Length + 1);
+            eList.SetValue(_employee, eList.Length-1);
+        }
+
+
         IEnumerator IEnumerable.GetEnumerator()
         {
             return (IEnumerator)GetEnumerator();
@@ -147,22 +156,5 @@ namespace HomeWork_Lesson_4
                 }
             }
         }
-    }
-    class App
-    {
-        //static void Main()
-        //{
-        //    Person[] peopleArray = new Person[3]
-        //    {
-        //    new Person("John", "Smith"),
-        //    new Person("Jim", "Johnson"),
-        //    new Person("Sue", "Rabon"),
-        //    };
-
-        //    People peopleList = new People(peopleArray);
-        //    foreach (Person p in peopleList)
-        //        Console.WriteLine(p.firstName + " " + p.lastName);
-
-        //}
     }
 }
